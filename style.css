@@ -55,15 +55,14 @@ img {
 
 /* ---------- Navbar ---------- */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 58px;
-    padding: 5px 0 !important;
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
     background: var(--nav);
     z-index: 1050;
 }
+
 .navbar-brand {
     margin-right: 0;
     padding: 0;
@@ -493,47 +492,48 @@ img {
 
 
 /* ==========================================
-   NEW KING STAR - OUR VALUABLE CLIENTS
+   CLIENTS SECTION
 ========================================== */
 
 .clients-section {
     position: relative;
-    padding: 90px 0;
-    background: #f8f6f2;
+    padding: 100px 0;
+    background: var(--bg);
+    color: var(--text);
     overflow: hidden;
 }
 
-
-/* ==========================================
-   SECTION HEADING
-========================================== */
+/* ===== SECTION HEADING ===== */
 
 .clients-heading {
-    max-width: 750px;
-    margin: 0 auto 45px;
+    max-width: 760px;
+    margin: 0 auto 55px;
 }
 
 .clients-heading .section-label {
     display: inline-block;
-    color: #b8884f;
+    margin-bottom: 14px;
+    color: var(--accent);
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 3px;
-    margin-bottom: 12px;
+    text-transform: uppercase;
 }
 
 .clients-heading h2 {
-    color: #2b1a10;
-    font-size: clamp(28px, 4vw, 42px);
-    font-weight: 800;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
+    color: var(--text);
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .clients-heading p {
-    color: #777;
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--muted);
     font-size: 15px;
     line-height: 1.8;
-    margin: 0;
 }
 
 
@@ -544,126 +544,117 @@ img {
 .clients-banner {
     position: relative;
     width: 100%;
-    height: 380px;
+    height: 420px;
+    margin-bottom: 75px;
     overflow: hidden;
-    border-radius: 14px;
-    margin-bottom: 55px;
-    background: #2b1a10;
+    border-radius: 12px;
+    background: #21180f;
+    isolation: isolate;
 }
 
 .banner-slides {
     position: absolute;
     inset: 0;
+    display: flex;
 }
 
 .banner-slide {
     position: absolute;
     inset: 0;
     opacity: 0;
-    animation: bannerFade 15s infinite;
+    animation: clientsBannerSlide 15s infinite;
 }
 
 .banner-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    display: block;
+    transform: scale(1.05);
+    animation: clientsBannerZoom 5s ease-in-out infinite alternate;
 }
 
-
-/* Slide Timing */
-
-.slide-one {
+.banner-slide.slide-one {
     animation-delay: 0s;
 }
 
-.slide-two {
+.banner-slide.slide-two {
     animation-delay: 5s;
 }
 
-.slide-three {
+.banner-slide.slide-three {
     animation-delay: 10s;
 }
 
-
-/* Banner Fade Animation */
-
-@keyframes bannerFade {
-    0% {
-        opacity: 0;
-    }
-
-    5% {
+@keyframes clientsBannerSlide {
+    0%, 30% {
         opacity: 1;
     }
-
-    30% {
-        opacity: 1;
-    }
-
-    38% {
-        opacity: 0;
-    }
-
-    100% {
+    33.33%, 100% {
         opacity: 0;
     }
 }
 
+@keyframes clientsBannerZoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.12);
+    }
+}
 
-/* Banner Overlay */
+/* ===== BANNER OVERLAY ===== */
 
 .clients-banner-overlay {
     position: absolute;
     inset: 0;
     z-index: 1;
-
-    background: linear-gradient(
-        90deg,
-        rgba(24, 14, 8, 0.88),
-        rgba(24, 14, 8, 0.50),
-        rgba(24, 14, 8, 0.10)
-    );
+    background:
+        linear-gradient(
+            90deg,
+            rgba(15, 12, 9, .82) 0%,
+            rgba(15, 12, 9, .48) 55%,
+            rgba(15, 12, 9, .18) 100%
+        );
 }
 
-
-/* Banner Content */
+/* ===== BANNER CONTENT ===== */
 
 .clients-banner-content {
     position: absolute;
     z-index: 2;
     top: 50%;
     left: 7%;
+    width: 75%;
     transform: translateY(-50%);
-    max-width: 570px;
-    color: #fff;
 }
 
 .clients-banner-content span {
     display: inline-block;
-    color: #d5ad78;
+    margin-bottom: 18px;
+    color: #e2bd91;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 3px;
-    margin-bottom: 15px;
 }
 
 .clients-banner-content h3 {
-    color: #fff;
-    font-size: clamp(26px, 4vw, 44px);
-    font-weight: 700;
-    line-height: 1.3;
+    max-width: 650px;
     margin: 0;
+    color: #fff;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700;
+    line-height: 1.25;
 }
 
-
-/* Banner Indicators */
+/* ===== BANNER INDICATORS ===== */
 
 .banner-indicators {
     position: absolute;
     z-index: 3;
-    bottom: 22px;
-    right: 35px;
+    bottom: 25px;
+    left: 7%;
     display: flex;
     gap: 9px;
 }
@@ -672,8 +663,8 @@ img {
     width: 25px;
     height: 4px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.45);
-    animation: indicatorFade 15s infinite;
+    background: rgba(255, 255, 255, .45);
+    animation: bannerIndicator 15s infinite;
 }
 
 .banner-indicators span:nth-child(1) {
@@ -688,172 +679,124 @@ img {
     animation-delay: 10s;
 }
 
-@keyframes indicatorFade {
+@keyframes bannerIndicator {
     0%, 30% {
-        background: #d5ad78;
+        background: #fff;
     }
-
-    38%, 100% {
-        background: rgba(255, 255, 255, 0.45);
+    33.33%, 100% {
+        background: rgba(255, 255, 255, .45);
     }
 }
 
 
 /* ==========================================
-   CLIENTS INFINITE CAROUSEL
+   CLIENT LOGO CAROUSEL
 ========================================== */
 
 .clients-carousel {
     position: relative;
     width: 100%;
     overflow: hidden;
-    padding: 10px 0 20px;
-
-    /* Side Fade Effect */
-    -webkit-mask-image: linear-gradient(
-        to right,
-        transparent,
-        #000 5%,
-        #000 95%,
-        transparent
-    );
-
-    mask-image: linear-gradient(
-        to right,
-        transparent,
-        #000 5%,
-        #000 95%,
-        transparent
-    );
+    padding: 10px 0 25px;
 }
-
-
-/* Moving Track */
 
 .clients-track {
     display: flex;
+    align-items: stretch;
+    gap: 22px;
     width: max-content;
-    gap: 20px;
-
-    animation: clientsMove 28s linear infinite;
+    animation: clientsInfiniteScroll 35s linear infinite;
 }
 
+.clients-carousel:hover .clients-track {
+    animation-play-state: paused;
+}
 
-/* Infinite Animation */
-
-@keyframes clientsMove {
+@keyframes clientsInfiniteScroll {
     from {
         transform: translateX(0);
     }
-
     to {
         transform: translateX(-50%);
     }
 }
 
-
-/* Pause On Hover */
-
-.clients-track:hover {
-    animation-play-state: paused;
-}
-
-
-/* ==========================================
-   INDIVIDUAL CLIENT CARD
-========================================== */
+/* ===== CLIENT CARD ===== */
 
 .client-card {
-    flex: 0 0 180px;
-    width: 180px;
-
-    padding: 15px 12px;
-
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 10px;
-
+    flex: 0 0 235px;
+    min-height: 245px;
+    padding: 28px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    background: var(--card);
+    border: 1px solid rgba(164, 119, 76, .14);
+    border-radius: 12px;
 
-    transition: all 0.3s ease;
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
 }
-
-
-/* Card Hover */
 
 .client-card:hover {
-    transform: translateY(-5px);
-    border-color: #d5ad78;
-
-    box-shadow: 0 10px 25px rgba(43, 26, 16, 0.10);
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .09);
 }
 
-
-/* ==========================================
-   COMPANY LOGO
-========================================== */
+/* ===== CLIENT LOGO ===== */
 
 .client-logo {
-    width: 100%;
-    height: 65px;
-
-    background: #fff;
-    border-radius: 7px;
+    width: 95px;
+    height: 95px;
+    margin-bottom: 20px;
+    padding: 12px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 10px;
-    margin-bottom: 10px;
+    background: var(--bg);
+    border: 1px solid rgba(164, 119, 76, .12);
+    border-radius: 50%;
+
+    transition: .35s ease;
+}
+
+.client-card:hover .client-logo {
+    border-color: var(--accent);
+    transform: scale(1.06);
 }
 
 .client-logo img {
-    max-width: 75%;
-    max-height: 42px;
-
-    width: auto;
-    height: auto;
-
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-
-    transition: transform 0.3s ease;
 }
 
-
-/* Logo Hover */
-
-.client-card:hover .client-logo img {
-    transform: scale(1.08);
-}
-
-
-/* ==========================================
-   COMPANY NAME
-========================================== */
+/* ===== CLIENT TEXT ===== */
 
 .client-card h4 {
-    font-size: 13px;
+    margin: 0 0 8px;
+    color: var(--text);
+    font-size: 16px;
     font-weight: 700;
     line-height: 1.4;
-
-    margin-bottom: 5px;
-
-    color: #2b1a10;
 }
 
-
-/* Company Description */
-
 .client-card p {
-    font-size: 10px;
-    line-height: 1.4;
-
     margin: 0;
-
-    color: #777;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
 }
 
 
@@ -862,21 +805,51 @@ img {
 ========================================== */
 
 .clients-bottom {
-    margin-top: 45px;
+    max-width: 700px;
+    margin: 55px auto 0;
+    padding-top: 35px;
+    border-top: 1px solid rgba(164, 119, 76, .2);
 }
 
 .clients-bottom h3 {
-    color: #2b1a10;
-    font-size: 25px;
-    font-weight: 800;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    color: var(--text);
+    font-size: clamp(23px, 3vw, 30px);
+    font-weight: 700;
 }
 
 .clients-bottom p {
-    color: #777;
-    font-size: 14px;
     margin: 0;
-    line-height: 1.7;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+body.dark .clients-section {
+    background: var(--bg);
+}
+
+body.dark .client-card {
+    background: var(--card);
+    border-color: rgba(201, 155, 107, .15);
+}
+
+body.dark .client-logo {
+    background: #302b24;
+    border-color: rgba(201, 155, 107, .15);
+}
+
+body.dark .client-card:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .25);
+}
+
+body.dark .clients-bottom {
+    border-color: rgba(201, 155, 107, .2);
 }
 
 
@@ -887,22 +860,30 @@ img {
 @media (max-width: 991px) {
 
     .clients-section {
-        padding: 70px 0;
-    }
-
-    .clients-banner {
-        height: 320px;
+        padding: 80px 0;
     }
 
     .clients-heading {
-        margin-bottom: 35px;
+        margin-bottom: 40px;
+    }
+
+    .clients-banner {
+        height: 350px;
+        margin-bottom: 55px;
+    }
+
+    .clients-banner-content {
+        width: 85%;
     }
 
     .client-card {
-        flex: 0 0 165px;
-        width: 165px;
+        flex-basis: 215px;
+        min-height: 225px;
     }
 
+    .clients-track {
+        gap: 18px;
+    }
 }
 
 
@@ -913,11 +894,10 @@ img {
 @media (max-width: 576px) {
 
     .clients-section {
-        padding: 55px 0;
+        padding: 65px 0;
     }
 
     .clients-heading {
-        padding: 0 12px;
         margin-bottom: 30px;
     }
 
@@ -927,93 +907,79 @@ img {
     }
 
     .clients-heading h2 {
-        font-size: 27px;
+        font-size: 29px;
+        margin-bottom: 13px;
     }
 
     .clients-heading p {
         font-size: 13px;
+        line-height: 1.7;
+        padding: 0 8px;
     }
 
-
-    /* Mobile Banner */
-
     .clients-banner {
-        height: 260px;
-        border-radius: 10px;
-        margin-bottom: 35px;
+        height: 280px;
+        margin-bottom: 45px;
+        border-radius: 9px;
     }
 
     .clients-banner-content {
         left: 6%;
-        right: 6%;
+        width: 88%;
     }
 
     .clients-banner-content span {
         font-size: 10px;
         letter-spacing: 2px;
+        margin-bottom: 13px;
     }
 
     .clients-banner-content h3 {
-        font-size: 25px;
+        font-size: 27px;
     }
 
     .banner-indicators {
-        right: 20px;
-        bottom: 15px;
+        left: 6%;
+        bottom: 18px;
     }
-
-
-    /* Mobile Client Cards */
 
     .clients-track {
         gap: 14px;
-        animation-duration: 24s;
+        animation-duration: 30s;
     }
 
     .client-card {
-        flex: 0 0 150px;
-        width: 150px;
-
-        padding: 12px 9px;
-
-        border-radius: 8px;
+        flex-basis: 190px;
+        min-height: 210px;
+        padding: 22px 16px;
     }
 
     .client-logo {
-        height: 55px;
-        padding: 8px;
-        margin-bottom: 8px;
-    }
-
-    .client-logo img {
-        max-height: 36px;
+        width: 78px;
+        height: 78px;
+        margin-bottom: 15px;
     }
 
     .client-card h4 {
-        font-size: 12px;
-        margin-bottom: 4px;
+        font-size: 14px;
     }
 
     .client-card p {
-        font-size: 9px;
+        font-size: 11px;
     }
 
-
-    /* Bottom Content */
-
     .clients-bottom {
-        margin-top: 30px;
-        padding: 0 10px;
+        margin-top: 35px;
+        padding-top: 25px;
     }
 
     .clients-bottom h3 {
-        font-size: 21px;
+        font-size: 23px;
     }
 
     .clients-bottom p {
         font-size: 12px;
     }
-
 }
 
 
@@ -1022,18 +988,22 @@ img {
 ========================================== */
 
 @media (prefers-reduced-motion: reduce) {
-
     .banner-slide,
+    .banner-slide img,
     .banner-indicators span,
     .clients-track {
-        animation: none;
+        animation: none !important;
     }
 
     .banner-slide:first-child {
         opacity: 1;
     }
 
+    .banner-indicators span:first-child {
+        background: #fff;
+    }
 }
+
 
 
 
@@ -1869,5 +1839,249 @@ footer {
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
+    }
+}
+
+/* ==========================================
+   NEW KING STAR — COMPLETE DARK MODE FIX
+   Clients + Contact Sections
+========================================== */
+
+/* ---------- Clients Section ---------- */
+body.dark .clients-section {
+    background: var(--bg) !important;
+}
+
+body.dark .clients-heading h2,
+body.dark .clients-bottom h3 {
+    color: var(--text) !important;
+}
+
+body.dark .clients-heading p,
+body.dark .clients-bottom p {
+    color: var(--muted) !important;
+}
+
+body.dark .clients-heading .section-label {
+    color: var(--accent) !important;
+}
+
+body.dark .client-card {
+    background: var(--card) !important;
+    border-color: #39352e !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+}
+
+body.dark .client-card:hover {
+    border-color: var(--accent) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .3);
+}
+
+body.dark .client-card h4 {
+    color: var(--text) !important;
+}
+
+body.dark .client-card p {
+    color: var(--muted) !important;
+}
+
+/* Keep company logos readable */
+body.dark .client-logo {
+    background: #fff !important;
+}
+
+/* Banner remains dark with white text */
+body.dark .clients-banner {
+    background: #25231f;
+}
+
+body.dark .clients-banner-content h3 {
+    color: #fff !important;
+}
+
+/* ---------- Contact Section ---------- */
+body.dark .contact-section {
+    background: var(--bg) !important;
+}
+
+body.dark .contact-info h2 {
+    color: var(--text) !important;
+}
+
+body.dark .contact-info h2 span {
+    color: var(--accent) !important;
+}
+
+body.dark .contact-tag,
+body.dark .contact-detail-item small {
+    color: var(--accent) !important;
+}
+
+body.dark .contact-description {
+    color: var(--muted) !important;
+}
+
+body.dark .contact-detail-item p {
+    color: var(--text) !important;
+}
+
+body.dark .contact-detail-item a {
+    color: var(--accent) !important;
+}
+
+body.dark .contact-icon {
+    background: var(--card) !important;
+    border-color: #48443c !important;
+    color: var(--accent) !important;
+}
+
+body.dark .contact-detail-item:hover .contact-icon {
+    background: var(--accent) !important;
+    color: #fff !important;
+}
+
+body.dark .contact-bottom-text {
+    color: var(--muted) !important;
+}
+
+body.dark .contact-bottom-text span {
+    background: var(--accent) !important;
+}
+
+/* ---------- Contact Form ---------- */
+body.dark .contact-form-box {
+    background: var(--card) !important;
+    border-color: #39352e !important;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .25);
+}
+
+body.dark .form-top h3 {
+    color: var(--text) !important;
+}
+
+body.dark .form-subtitle {
+    color: var(--accent) !important;
+}
+
+body.dark .form-intro {
+    color: var(--muted) !important;
+}
+
+body.dark .form-top-icon {
+    background: #302117 !important;
+    color: #d6b58c !important;
+}
+
+body.dark .contact-form .form-group label {
+    color: var(--text) !important;
+}
+
+body.dark .contact-form .input-wrap input,
+body.dark .contact-form .textarea-wrap textarea {
+    background: #302e29 !important;
+    color: var(--text) !important;
+    border-color: #48443c !important;
+}
+
+body.dark .contact-form .input-wrap input::placeholder,
+body.dark .contact-form .textarea-wrap textarea::placeholder {
+    color: #aaa198 !important;
+}
+
+body.dark .input-wrap i,
+body.dark .textarea-wrap i {
+    color: var(--accent) !important;
+}
+
+body.dark .contact-form .input-wrap input:focus,
+body.dark .contact-form .textarea-wrap textarea:focus {
+    background: #37342e !important;
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 4px rgba(201, 155, 107, .12) !important;
+}
+
+body.dark .contact-submit-btn {
+    background: var(--accent) !important;
+    color: #fff !important;
+}
+
+body.dark .contact-submit-btn i {
+    background: #302117 !important;
+    color: #fff !important;
+}
+
+body.dark .contact-submit-btn:hover {
+    background: #b8884f !important;
+}
+
+body.dark .form-security {
+    color: var(--muted) !important;
+}
+
+body.dark .form-security i {
+    color: var(--accent) !important;
+}
+
+/* ---------- Mobile Dark Mode ---------- */
+@media (max-width: 991px) {
+    body.dark .navbar-collapse {
+        background: var(--nav) !important;
+    }
+
+    body.dark .navbar-nav .nav-link {
+        color: var(--text) !important;
+    }
+
+    body.dark .navbar-nav .nav-link:hover {
+        color: var(--accent) !important;
+    }
+}
+
+@media (max-width: 576px) {
+    body.dark .clients-section,
+    body.dark .contact-section {
+        background: var(--bg) !important;
+    }
+
+    body.dark .client-card {
+        background: var(--card) !important;
+    }
+
+    body.dark .contact-form-box {
+        background: var(--card) !important;
+    }
+}
+
+/* ==========================================
+   RESPONSIVE FIXED NAVBAR
+   Tablet + Mobile only
+========================================== */
+@media (max-width: 991px) {
+    .navbar {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1055;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, .08);
+    }
+
+    .navbar-collapse {
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    /* Keep anchor-linked sections visible below the fixed navbar */
+    section[id],
+    header[id] {
+        scroll-margin-top: 70px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-collapse {
+        max-height: calc(100vh - 55px);
     }
 }

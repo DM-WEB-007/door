@@ -1,54 +1,153 @@
-  let currentLanguage = 'en';
 
-    const languageBtn = document.getElementById('languageBtn');
+document.addEventListener("DOMContentLoaded", function () {
 
-    languageBtn.addEventListener('click', function () {
+    /* ==========================================
+       1. LANGUAGE SWITCHER
+    ========================================== */
 
-        currentLanguage = currentLanguage === 'en' ? 'bn' : 'en';
+    let currentLanguage =
+        localStorage.getItem("siteLanguage") || "en";
 
-        document.querySelectorAll('[data-en]').forEach(element => {
+    const languageButtons = [
+        document.getElementById("languageBtn"),
+        document.getElementById("mobileLanguageBtn")
+    ].filter(Boolean);
 
-            element.textContent = element.getAttribute('data-' + currentLanguage);
+    function changeLanguage(language) {
+
+        currentLanguage = language;
+
+        document.querySelectorAll("[data-en][data-bn]").forEach(element => {
+
+            const translatedText =
+                element.getAttribute("data-" + language);
+
+            if (translatedText !== null) {
+                element.textContent = translatedText;
+            }
 
         });
 
-        document.body.classList.toggle('bangla', currentLanguage === 'bn');
+        document.body.classList.toggle(
+            "bangla",
+            language === "bn"
+        );
 
-        document.documentElement.lang = currentLanguage;
+        document.documentElement.lang = language;
 
-        languageBtn.textContent = currentLanguage === 'en'
-            ? 'বাংলা'
-            : 'English';
+        languageButtons.forEach(button => {
+
+            button.textContent =
+                language === "en" ? "বাংলা" : "English";
+
+        });
+
+        localStorage.setItem("siteLanguage", language);
+    }
+
+    languageButtons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            const newLanguage =
+                currentLanguage === "en" ? "bn" : "en";
+
+            changeLanguage(newLanguage);
+
+        });
 
     });
 
+    // Load saved language
+    changeLanguage(currentLanguage);
 
-    // DARK / LIGHT MODE
 
-    const themeBtn = document.getElementById('themeBtn');
 
-    themeBtn.addEventListener('click', function () {
+    /* ==========================================
+       2. DARK / LIGHT MODE
+       DESKTOP + MOBILE SUPPORT
+    ========================================== */
 
-        document.body.classList.toggle('dark');
+    const themeButtons = [
+        document.getElementById("themeBtn"),
+        document.getElementById("mobileThemeBtn")
+    ].filter(Boolean);
 
-        const isDark = document.body.classList.contains('dark');
+    let currentTheme =
+        localStorage.getItem("siteTheme") || "light";
 
-        themeBtn.innerHTML = isDark
-            ? '<i class="bi bi-sun-fill"></i>'
-            : '<i class="bi bi-moon-stars-fill"></i>';
+    function updateTheme() {
+
+        // Apply theme to body
+        document.body.classList.toggle(
+            "dark",
+            currentTheme === "dark"
+        );
+
+        // Update all theme buttons
+        themeButtons.forEach(button => {
+
+            button.innerHTML =
+                currentTheme === "dark"
+                    ? '<i class="bi bi-sun-fill"></i>'
+                    : '<i class="bi bi-moon-stars-fill"></i>';
+
+            button.setAttribute(
+                "aria-label",
+                currentTheme === "dark"
+                    ? "Switch to light mode"
+                    : "Switch to dark mode"
+            );
+
+            button.setAttribute(
+                "title",
+                currentTheme === "dark"
+                    ? "Light Mode"
+                    : "Dark Mode"
+            );
+
+        });
+
+        // Save theme
+        localStorage.setItem("siteTheme", currentTheme);
+    }
+
+    // Desktop + Mobile button click
+    themeButtons.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            currentTheme =
+                currentTheme === "dark" ? "light" : "dark";
+
+            updateTheme();
+
+        });
 
     });
 
+    // Load saved theme
+    updateTheme();
 
-    // CLOSE MOBILE NAVBAR AFTER CLICK
 
-    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
 
-        link.addEventListener('click', function () {
+    /* ==========================================
+       3. CLOSE MOBILE NAVBAR AFTER CLICK
+    ========================================== */
 
-            const navbar = document.getElementById('mainNavbar');
+    document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
 
-            const collapse = bootstrap.Collapse.getInstance(navbar);
+        link.addEventListener("click", function () {
+
+            const navbar =
+                document.getElementById("mainNavbar");
+
+            if (!navbar || typeof bootstrap === "undefined") {
+                return;
+            }
+
+            const collapse =
+                bootstrap.Collapse.getInstance(navbar);
 
             if (collapse) {
                 collapse.hide();
@@ -60,118 +159,200 @@
 
 
 
+    /* ==========================================
+       4. GALLERY FILTER & LOAD MORE
+    ========================================== */
 
+    const galleryItems =
+        document.querySelectorAll(".gallery-item");
 
-/* ===== GALLERY FILTER & LOAD MORE ===== */
+    const galleryFilters =
+        document.querySelectorAll(".gallery-filter");
 
-const galleryItems = document.querySelectorAll('.gallery-item');
-const galleryFilters = document.querySelectorAll('.gallery-filter');
-const loadMoreBtn = document.getElementById('galleryLoadMore');
+    const loadMoreBtn =
+        document.getElementById("galleryLoadMore");
 
-let activeCategory = 'all';
-let visibleCount = 6;
+    let activeCategory = "all";
+    let visibleCount = 6;
 
-function updateGallery() {
+    function updateGallery() {
 
-    let filteredItems = [];
+        if (!galleryItems.length) return;
 
-    galleryItems.forEach(item => {
-        const match = activeCategory === 'all' ||
-            item.dataset.category === activeCategory;
+        let filteredItems = [];
 
-        if (match) {
-            filteredItems.push(item);
+        galleryItems.forEach(item => {
+
+            const match =
+                activeCategory === "all" ||
+                item.dataset.category === activeCategory;
+
+            if (match) {
+                filteredItems.push(item);
+            }
+
+            item.classList.add("hide");
+
+        });
+
+        filteredItems.forEach((item, index) => {
+
+            if (index < visibleCount) {
+                item.classList.remove("hide");
+            }
+
+        });
+
+        if (loadMoreBtn) {
+
+            loadMoreBtn.style.display =
+                filteredItems.length > visibleCount
+                    ? "inline-block"
+                    : "none";
+
         }
 
-        item.classList.add('hide');
+    }
+
+    // Gallery filter buttons
+    galleryFilters.forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            galleryFilters.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            this.classList.add("active");
+
+            activeCategory = this.dataset.filter;
+
+            visibleCount = 6;
+
+            updateGallery();
+
+        });
+
     });
 
-    filteredItems.forEach((item, index) => {
-        if (index < visibleCount) {
-            item.classList.remove('hide');
-        }
-    });
+    // Load more button
+    if (loadMoreBtn) {
 
-    loadMoreBtn.style.display =
-        filteredItems.length > visibleCount ? 'inline-block' : 'none';
-}
+        loadMoreBtn.addEventListener("click", function () {
 
-galleryFilters.forEach(button => {
+            visibleCount += 6;
 
-    button.addEventListener('click', function () {
+            updateGallery();
 
-        galleryFilters.forEach(btn => btn.classList.remove('active'));
+        });
 
-        this.classList.add('active');
+    }
 
-        activeCategory = this.dataset.filter;
-        visibleCount = 6;
-
-        updateGallery();
-    });
-
-});
-
-loadMoreBtn.addEventListener('click', function () {
-    visibleCount += 6;
+    // Initial gallery load
     updateGallery();
-});
-
-updateGallery();
 
 
 
+    /* ==========================================
+       5. EMAILJS CONTACT FORM
+    ========================================== */
 
+    const contactForm =
+        document.getElementById("contactForm");
 
-// Initialize EmailJS
-emailjs.init({
-    publicKey: "KX2ecpy8R2jyTUpKU"
-});
+    const submitBtn =
+        document.getElementById("submitBtn");
 
-const contactForm = document.getElementById("contactForm");
-const submitBtn = document.getElementById("submitBtn");
-const formStatus = document.getElementById("formStatus");
+    const formStatus =
+        document.getElementById("formStatus");
 
-contactForm.addEventListener("submit", function(event) {
+    // Initialize EmailJS
+    if (typeof emailjs !== "undefined") {
 
-    event.preventDefault();
+        emailjs.init({
+            publicKey: "KX2ecpy8R2jyTUpKU"
+        });
 
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Sending...";
-    formStatus.textContent = "";
+    }
 
-    emailjs.sendForm(
-        "service_l1jqecf",
-        "template_rpewzcn",
-        contactForm
-    )
-    .then(function(response) {
+    if (contactForm && submitBtn && formStatus) {
 
-        console.log("SUCCESS:", response);
+        contactForm.addEventListener("submit", function (event) {
 
-        formStatus.textContent =
-            "Your inquiry has been sent successfully!";
+            event.preventDefault();
 
-        formStatus.style.color = "green";
+            // Check EmailJS availability
+            if (typeof emailjs === "undefined") {
 
-        contactForm.reset();
+                formStatus.textContent =
+                    currentLanguage === "bn"
+                        ? "ইমেইল সার্ভিস পাওয়া যাচ্ছে না।"
+                        : "Email service is not available.";
 
-    })
-    .catch(function(error) {
+                formStatus.style.color = "red";
 
-        console.error("EMAILJS ERROR:", error);
+                return;
 
-        formStatus.textContent =
-            "Error: " + (error.text || error.message || "Unknown error");
+            }
 
-        formStatus.style.color = "red";
+            // Disable submit button
+            submitBtn.disabled = true;
 
-    })
-    .finally(function() {
+            submitBtn.textContent =
+                currentLanguage === "bn"
+                    ? "পাঠানো হচ্ছে..."
+                    : "Sending...";
 
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Submit Inquiry";
+            formStatus.textContent = "";
 
-    });
+            // Send email
+            emailjs.sendForm(
+                "service_l1jqecf",
+                "template_rpewzcn",
+                contactForm
+            )
+
+            .then(function (response) {
+
+                console.log("SUCCESS:", response);
+
+                formStatus.textContent =
+                    currentLanguage === "bn"
+                        ? "আপনার বার্তাটি সফলভাবে পাঠানো হয়েছে!"
+                        : "Your inquiry has been sent successfully!";
+
+                formStatus.style.color = "green";
+
+                contactForm.reset();
+
+            })
+
+            .catch(function (error) {
+
+                console.error("EMAILJS ERROR:", error);
+
+                formStatus.textContent =
+                    currentLanguage === "bn"
+                        ? "দুঃখিত! বার্তা পাঠানো যায়নি। আবার চেষ্টা করুন।"
+                        : "Sorry! Message could not be sent. Please try again.";
+
+                formStatus.style.color = "red";
+
+            })
+
+            .finally(function () {
+
+                submitBtn.disabled = false;
+
+                submitBtn.textContent =
+                    currentLanguage === "bn"
+                        ? "জিজ্ঞাসা পাঠান"
+                        : "Submit Inquiry";
+
+            });
+
+        });
+
+    }
 
 });
