@@ -1,0 +1,791 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WOODORA | Premium Furniture</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+
+        <a class="navbar-brand" href="#home">
+            <img src="logo.png" alt="NEW KING STAR" class="site-logo">
+        </a>
+
+        <!-- Mobile WhatsApp Icon -->
+        <a href="https://wa.me/8801300573753"
+           class="mobile-whatsapp"
+           target="_blank"
+           aria-label="Chat on WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="bi bi-list fs-2"></i>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home" data-en="Home" data-bn="হোম">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about" data-en="About" data-bn="আমাদের সম্পর্কে">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#products" data-en="Product" data-bn="পণ্য">Product</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery" data-en="Gallery" data-bn="গ্যালারি">Gallery</a>
+                </li>
+            </ul>
+
+            <div class="nav-tools">
+                <button class="language-btn" id="languageBtn">বাংলা</button>
+
+                <button class="tool-btn" id="themeBtn" aria-label="Toggle theme">
+                    <i class="bi bi-moon-stars-fill"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+
+<!-- HERO SLIDER -->
+
+<section class="hero" id="home">
+
+    <div id="heroSlider" class="carousel slide carousel-fade"
+        data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-indicators">
+
+            <button type="button" data-bs-target="#heroSlider"
+                data-bs-slide-to="0" class="active"></button>
+
+            <button type="button" data-bs-target="#heroSlider"
+                data-bs-slide-to="1"></button>
+
+            <button type="button" data-bs-target="#heroSlider"
+                data-bs-slide-to="2"></button>
+
+        </div>
+
+        <div class="carousel-inner">
+
+            <!-- SLIDE 1 -->
+
+            <div class="carousel-item active slide-1">
+
+                <div class="container hero-content">
+
+                    <div class="hero-text">
+
+                        <p class="hero-subtitle"
+                            data-en="WELCOME TO WOODORA"
+                            data-bn="উডোরাতে আপনাকে স্বাগতম">
+                            WELCOME TO WOODORA
+                        </p>
+
+                        <h1 class="hero-title"
+                            data-en="Furniture That Defines Your Lifestyle"
+                            data-bn="আপনার জীবনযাত্রার জন্য অনন্য আসবাবপত্র">
+                            Furniture That Defines Your Lifestyle
+                        </h1>
+
+                        <p class="hero-description"
+                            data-en="Discover beautifully crafted furniture that brings comfort, elegance and timeless beauty to your home."
+                            data-bn="আপনার ঘরে আরাম, আভিজাত্য এবং চিরন্তন সৌন্দর্য নিয়ে আসুন আমাদের সুন্দর ডিজাইনের আসবাবপত্রের মাধ্যমে।">
+                            Discover beautifully crafted furniture that brings comfort, elegance and timeless beauty to your home.
+                        </p>
+
+                        <a href="#products" class="primary-btn"
+                            data-en="EXPLORE MORE →"
+                            data-bn="আরও দেখুন →">
+                            EXPLORE MORE →
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- SLIDE 2 -->
+
+            <div class="carousel-item slide-2">
+
+                <div class="container hero-content">
+
+                    <div class="hero-text">
+
+                        <p class="hero-subtitle"
+                            data-en="ELEGANCE & COMFORT"
+                            data-bn="আভিজাত্য ও আরাম">
+                            ELEGANCE & COMFORT
+                        </p>
+
+                        <h1 class="hero-title"
+                            data-en="Make Every Corner Beautiful"
+                            data-bn="ঘরের প্রতিটি কোণ করে তুলুন সুন্দর">
+                            Make Every Corner Beautiful
+                        </h1>
+
+                        <p class="hero-description"
+                            data-en="Create a space that reflects your personality with our exclusive furniture collections."
+                            data-bn="আমাদের বিশেষ আসবাবপত্রের সংগ্রহ দিয়ে আপনার পছন্দ ও ব্যক্তিত্বের প্রতিফলন ঘটান।">
+                            Create a space that reflects your personality with our exclusive furniture collections.
+                        </p>
+
+                        <a href="#products" class="primary-btn"
+                            data-en="DISCOVER COLLECTION →"
+                            data-bn="সংগ্রহ দেখুন →">
+                            DISCOVER COLLECTION →
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- SLIDE 3 -->
+
+            <div class="carousel-item slide-3">
+
+                <div class="container hero-content">
+
+                    <div class="hero-text">
+
+                        <p class="hero-subtitle"
+                            data-en="CRAFTED WITH PASSION"
+                            data-bn="যত্নে তৈরি, ভালোবাসায় সাজানো">
+                            CRAFTED WITH PASSION
+                        </p>
+
+                        <h1 class="hero-title"
+                            data-en="Where Quality Meets Design"
+                            data-bn="যেখানে মান ও ডিজাইনের মিলন">
+                            Where Quality Meets Design
+                        </h1>
+
+                        <p class="hero-description"
+                            data-en="Experience premium quality, thoughtful details and furniture made to last."
+                            data-bn="উন্নত মান, নিখুঁত ডিজাইন এবং দীর্ঘস্থায়ী আসবাবপত্রের অভিজ্ঞতা নিন।">
+                            Experience premium quality, thoughtful details and furniture made to last.
+                        </p>
+
+                        <a href="#about" class="primary-btn"
+                            data-en="ABOUT US →"
+                            data-bn="আমাদের সম্পর্কে →">
+                            ABOUT US →
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button"
+            data-bs-target="#heroSlider" data-bs-slide="prev">
+
+            <span class="carousel-control-prev-icon"></span>
+
+        </button>
+
+        <button class="carousel-control-next" type="button"
+            data-bs-target="#heroSlider" data-bs-slide="next">
+
+            <span class="carousel-control-next-icon"></span>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT SECTION -->
+
+<section class="about-section" id="about">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <div class="about-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=1000&q=85"
+                        alt="Premium furniture interior">
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="about-content">
+
+                    <p class="section-label"
+                        data-en="ABOUT OUR COMPANY"
+                        data-bn="আমাদের প্রতিষ্ঠান সম্পর্কে">
+                        ABOUT OUR COMPANY
+                    </p>
+
+                    <h2 class="about-title"
+                        data-en="We Create Furniture That Feels Like Home"
+                        data-bn="আমরা তৈরি করি ঘরের মতো আপন আসবাবপত্র">
+                        We Create Furniture That Feels Like Home
+                    </h2>
+
+                    <p class="about-description"
+                        data-en="At WOODORA, we believe furniture is more than just something you place in a room. It reflects your lifestyle, personality and taste. That's why we focus on beautiful designs, quality materials and exceptional craftsmanship."
+                        data-bn="WOODORA বিশ্বাস করে, আসবাবপত্র শুধু ঘর সাজানোর উপকরণ নয়। এটি আপনার জীবনযাত্রা, ব্যক্তিত্ব এবং রুচির পরিচয় বহন করে। তাই আমরা সুন্দর ডিজাইন, মানসম্মত উপকরণ এবং নিখুঁত কারুকাজকে গুরুত্ব দিই।">
+                        At WOODORA, we believe furniture is more than just something you place in a room. It reflects your lifestyle, personality and taste. That's why we focus on beautiful designs, quality materials and exceptional craftsmanship.
+                    </p>
+
+                    <p class="about-description"
+                        data-en="Our goal is to make every home more comfortable, elegant and beautiful."
+                        data-bn="প্রতিটি ঘরকে আরও আরামদায়ক, মার্জিত এবং সুন্দর করে তোলাই আমাদের লক্ষ্য।">
+                        Our goal is to make every home more comfortable, elegant and beautiful.
+                    </p>
+
+                    <a href="#footer" class="primary-btn"
+                        data-en="CONTACT US →"
+                        data-bn="যোগাযোগ করুন →">
+                        CONTACT US →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<section class="contact-section" id="contact">
+    <div class="container">
+
+        <div class="contact-wrapper">
+
+            <!-- LEFT CONTENT -->
+            <div class="contact-info">
+
+                <span class="contact-tag">
+                    <span class="contact-dot"></span>
+                    LET'S CONNECT
+                </span>
+
+                <h2>
+                    Let's Create<br>
+                    Something <span>Beautiful.</span>
+                </h2>
+
+                <p class="contact-description">
+                    Have a furniture project in mind? Tell us what you're looking for.
+                    Our team is ready to help you bring your dream space to life.
+                </p>
+
+                <div class="contact-details">
+
+                    <div class="contact-detail-item">
+                        <div class="contact-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <div>
+                            <small>EMAIL US</small>
+                            <p>dmraihan0007@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-item">
+                        <div class="contact-icon">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+                        <div>
+                            <small>CALL US</small>
+                            <p>+880 1300-573753</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-item">
+                        <div class="contact-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div>
+                            <small>OUR LOCATION</small>
+                            <p>Dhaka, Bangladesh</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="contact-bottom-text">
+                    <span></span>
+                    Premium Furniture. Timeless Living.
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT FORM -->
+            <div class="contact-form-box">
+
+                <div class="form-top">
+                    <div>
+                        <span class="form-subtitle">GET IN TOUCH</span>
+                        <h3>Send Us a Message</h3>
+                    </div>
+
+                    <div class="form-top-icon">
+                        <i class="bi bi-send"></i>
+                    </div>
+                </div>
+
+                <p class="form-intro">
+                    Fill out the form below and we'll get back to you shortly.
+                </p>
+
+                <form id="contactForm" class="contact-form">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="visitorName">Your Name</label>
+                            <div class="input-wrap">
+                                <i class="bi bi-person"></i>
+                                <input
+                                    type="text"
+                                    id="visitorName"
+                                    name="from_name"
+                                    placeholder="Enter your full name"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="visitorEmail">Email Address</label>
+                            <div class="input-wrap">
+                                <i class="bi bi-envelope"></i>
+                                <input
+                                    type="email"
+                                    id="visitorEmail"
+                                    name="reply_to"
+                                    placeholder="Enter your email"
+                                    required>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visitorPhone">Phone Number</label>
+                        <div class="input-wrap">
+                            <i class="bi bi-telephone"></i>
+                            <input
+                                type="tel"
+                                id="visitorPhone"
+                                name="phone"
+                                placeholder="Enter your phone number"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="visitorRequirement">Your Requirements</label>
+                        <div class="textarea-wrap">
+                            <i class="bi bi-chat-left-text"></i>
+                            <textarea
+                                id="visitorRequirement"
+                                name="message"
+                                rows="5"
+                                placeholder="Tell us about the furniture you need..."
+                                required></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="contact-submit-btn">
+                        <span>Submit Inquiry</span>
+                        <i class="bi bi-arrow-up-right"></i>
+                    </button>
+
+                    <p id="formStatus" class="mt-3"></p>
+
+                    <div class="form-security">
+                        <i class="bi bi-shield-check"></i>
+                        Your information is safe with us.
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<script>
+// Initialize EmailJS
+emailjs.init({
+    publicKey: "KX2ecpy8R2jyTUpKU"
+});
+
+const contactForm = document.getElementById("contactForm");
+const submitBtn = document.getElementById("submitBtn");
+const formStatus = document.getElementById("formStatus");
+
+contactForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+    formStatus.textContent = "";
+
+    emailjs.sendForm(
+        "service_l1jqecf",
+        "template_rpewzcn",
+        contactForm
+    )
+    .then(function(response) {
+
+        console.log("SUCCESS:", response);
+
+        formStatus.textContent =
+            "Your inquiry has been sent successfully!";
+
+        formStatus.style.color = "green";
+
+        contactForm.reset();
+
+    })
+    .catch(function(error) {
+
+        console.error("EMAILJS ERROR:", error);
+
+        formStatus.textContent =
+            "Error: " + (error.text || error.message || "Unknown error");
+
+        formStatus.style.color = "red";
+
+    })
+    .finally(function() {
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Inquiry";
+
+    });
+
+});
+</script>
+
+
+<!-- FOOTER -->
+
+<footer id="footer">
+
+    <div class="container">
+
+        <div class="row g-5">
+
+            <!-- BRAND -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <h3 class="footer-logo">
+                    WOOD<span>ORA.</span>
+                </h3>
+
+                <p class="footer-description"
+                    data-en="Creating beautiful spaces with premium furniture, timeless designs and exceptional quality."
+                    data-bn="মানসম্মত আসবাবপত্র, চমৎকার ডিজাইন এবং উন্নত গুণগত মানের মাধ্যমে সুন্দর পরিবেশ তৈরি করাই আমাদের লক্ষ্য।">
+                    Creating beautiful spaces with premium furniture, timeless designs and exceptional quality.
+                </p>
+
+                <div class="social-links">
+
+                    <a href="https://wa.me/8801700000000" target="_blank"
+                        aria-label="WhatsApp">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="YouTube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="col-lg-2 col-md-6">
+
+                <h5 class="footer-title"
+                    data-en="Quick Links"
+                    data-bn="গুরুত্বপূর্ণ লিংক">
+                    Quick Links
+                </h5>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#home"
+                            data-en="Home" data-bn="হোম">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#about"
+                            data-en="About Us" data-bn="আমাদের সম্পর্কে">About Us</a>
+                    </li>
+
+                    <li>
+                        <a href="#products"
+                            data-en="Products" data-bn="পণ্য">Products</a>
+                    </li>
+
+                    <li>
+                        <a href="#gallery"
+                            data-en="Gallery" data-bn="গ্যালারি">Gallery</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <h5 class="footer-title"
+                    data-en="Contact Us"
+                    data-bn="যোগাযোগ">
+                    Contact Us
+                </h5>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="https://wa.me/8801700000000?text=Hello%20WOODORA,%20I%20want%20to%20know%20about%20your%20furniture."
+                           target="_blank">
+                            <i class="bi bi-whatsapp me-2"></i>
+                            WhatsApp Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://wa.me/8801700000000?text=Hello%20WOODORA,%20I%20want%20to%20call%20you."
+                           target="_blank">
+                            <i class="bi bi-telephone me-2"></i>
+                            +880 1700-000000
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://wa.me/8801700000000?text=Hello%20WOODORA,%20I%20have%20an%20inquiry."
+                           target="_blank">
+                            <i class="bi bi-envelope me-2"></i>
+                            Send an Inquiry
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://wa.me/8801700000000?text=Hello%20WOODORA,%20please%20share%20your%20location."
+                           target="_blank">
+                            <i class="bi bi-geo-alt me-2"></i>
+                            Dhaka, Bangladesh
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- WORKING HOURS -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <h5 class="footer-title"
+                    data-en="Working Hours"
+                    data-bn="অফিস সময়">
+                    Working Hours
+                </h5>
+
+                <p class="footer-description"
+                    data-en="Saturday - Thursday"
+                    data-bn="শনিবার - বৃহস্পতিবার">
+                    Saturday - Thursday
+                </p>
+
+                <p class="footer-description">
+                    10:00 AM - 8:00 PM
+                </p>
+
+                <a href="https://wa.me/8801700000000?text=Hello%20WOODORA,%20I%20want%20to%20know%20more."
+                   target="_blank"
+                   class="btn btn-success btn-sm mt-2">
+
+                    <i class="bi bi-whatsapp me-1"></i>
+                    Chat With Us
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+            © 2026 WOODORA. All Rights Reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- FLOATING WHATSAPP BUTTON -->
+
+<a href="https://wa.me/8801700000000?text=Hello%20WOODORA,%20I%20want%20to%20know%20more%20about%20your%20furniture."
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat with us on WhatsApp">
+
+    <i class="bi bi-whatsapp"></i>
+
+</a>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+    // LANGUAGE SWITCHER
+
+    let currentLanguage = 'en';
+
+    const languageBtn = document.getElementById('languageBtn');
+
+    languageBtn.addEventListener('click', function () {
+
+        currentLanguage = currentLanguage === 'en' ? 'bn' : 'en';
+
+        document.querySelectorAll('[data-en]').forEach(element => {
+
+            element.textContent = element.getAttribute('data-' + currentLanguage);
+
+        });
+
+        document.body.classList.toggle('bangla', currentLanguage === 'bn');
+
+        document.documentElement.lang = currentLanguage;
+
+        languageBtn.textContent = currentLanguage === 'en'
+            ? 'বাংলা'
+            : 'English';
+
+    });
+
+
+    // DARK / LIGHT MODE
+
+    const themeBtn = document.getElementById('themeBtn');
+
+    themeBtn.addEventListener('click', function () {
+
+        document.body.classList.toggle('dark');
+
+        const isDark = document.body.classList.contains('dark');
+
+        themeBtn.innerHTML = isDark
+            ? '<i class="bi bi-sun-fill"></i>'
+            : '<i class="bi bi-moon-stars-fill"></i>';
+
+    });
+
+
+    // CLOSE MOBILE NAVBAR AFTER CLICK
+
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+
+        link.addEventListener('click', function () {
+
+            const navbar = document.getElementById('mainNavbar');
+
+            const collapse = bootstrap.Collapse.getInstance(navbar);
+
+            if (collapse) {
+                collapse.hide();
+            }
+
+        });
+
+    });
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
