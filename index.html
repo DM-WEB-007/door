@@ -31,14 +31,25 @@
             <img src="logo.png" alt="NEW KING STAR" class="site-logo">
         </a>
 
-        <!-- Mobile WhatsApp Icon -->
-        <a href="https://wa.me/8801300573753"
-           class="mobile-whatsapp"
-           target="_blank"
-           aria-label="Chat on WhatsApp">
-            <i class="bi bi-whatsapp"></i>
-        </a>
+        <!-- Mobile Actions -->
+        <div class="mobile-nav-actions">
 
+            <a href="https://wa.me/8801300573753"
+               class="mobile-whatsapp"
+               target="_blank"
+               aria-label="Chat on WhatsApp">
+                <i class="bi bi-whatsapp"></i>
+            </a>
+
+            <button class="language-btn" id="mobileLanguageBtn">বাংলা</button>
+
+            <button class="tool-btn" id="mobileThemeBtn" aria-label="Toggle theme">
+                <i class="bi bi-moon-stars-fill"></i>
+            </button>
+
+        </div>
+
+        <!-- Hamburger -->
         <button class="navbar-toggler" type="button"
             data-bs-toggle="collapse" data-bs-target="#mainNavbar"
             aria-controls="mainNavbar" aria-expanded="false"
@@ -49,23 +60,13 @@
         <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
 
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#home" data-en="Home" data-bn="হোম">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#about" data-en="About" data-bn="আমাদের সম্পর্কে">About</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#products" data-en="Product" data-bn="পণ্য">Product</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#gallery" data-en="Gallery" data-bn="গ্যালারি">Gallery</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="#home" data-en="Home" data-bn="হোম">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about" data-en="About" data-bn="আমাদের সম্পর্কে">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#products" data-en="Product" data-bn="পণ্য">Product</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery" data-en="Gallery" data-bn="গ্যালারি">Gallery</a></li>
             </ul>
 
+            <!-- Desktop Actions -->
             <div class="nav-tools">
                 <button class="language-btn" id="languageBtn">বাংলা</button>
 
@@ -305,9 +306,21 @@
     <div class="container">
 
         <div class="gallery-heading text-center">
-            <span class="section-label">OUR COLLECTION</span>
-            <h2 class="gallery-title">Explore Our Gallery</h2>
-            <p class="gallery-description">
+            <span class="section-label"
+                data-en="OUR COLLECTION"
+                data-bn="আমাদের সংগ্রহ">
+                OUR COLLECTION
+            </span>
+
+            <h2 class="gallery-title"
+                data-en="Explore Our Gallery"
+                data-bn="আমাদের গ্যালারি ঘুরে দেখুন">
+                Explore Our Gallery
+            </h2>
+
+            <p class="gallery-description"
+                data-en="Discover our premium collection of beautifully crafted wooden furniture and designs."
+                data-bn="নান্দনিক ডিজাইন ও নিখুঁত কারুকাজে তৈরি আমাদের উন্নতমানের কাঠের আসবাবপত্রের সংগ্রহ দেখুন।">
                 Discover our premium collection of beautifully crafted
                 wooden furniture and designs.
             </p>
@@ -315,13 +328,26 @@
 
         <!-- Category Buttons -->
         <div class="gallery-filters">
-            <button class="gallery-filter active" data-filter="all">All</button>
-            <button class="gallery-filter" data-filter="door">Door</button>
-            <button class="gallery-filter" data-filter="bed">Bed</button>
-            <button class="gallery-filter" data-filter="window">Window</button>
-            <button class="gallery-filter" data-filter="sofa">Sofa</button>
-            <button class="gallery-filter" data-filter="dining">Dining</button>
-            <button class="gallery-filter" data-filter="wardrobe">Wardrobe</button>
+            <button class="gallery-filter active" data-filter="all"
+                data-en="All" data-bn="সবগুলো">All</button>
+
+            <button class="gallery-filter" data-filter="door"
+                data-en="Door" data-bn="দরজা">Door</button>
+
+            <button class="gallery-filter" data-filter="bed"
+                data-en="Bed" data-bn="খাট">Bed</button>
+
+            <button class="gallery-filter" data-filter="window"
+                data-en="Window" data-bn="জানালা">Window</button>
+
+            <button class="gallery-filter" data-filter="sofa"
+                data-en="Sofa" data-bn="সোফা">Sofa</button>
+
+            <button class="gallery-filter" data-filter="dining"
+                data-en="Dining" data-bn="ডাইনিং">Dining</button>
+
+            <button class="gallery-filter" data-filter="wardrobe"
+                data-en="Wardrobe" data-bn="ওয়ারড্রোব">Wardrobe</button>
         </div>
 
         <!-- Gallery Images -->
@@ -330,97 +356,96 @@
             <div class="gallery-item" data-category="door">
                 <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=85" alt="Wooden Door">
                 <div class="gallery-overlay">
-                    <span>Door Collection</span>
-                    <h4>Premium Wooden Door</h4>
+                    <span data-en="Door Collection" data-bn="দরজার সংগ্রহ">Door Collection</span>
+                    <h4 data-en="Premium Wooden Door" data-bn="প্রিমিয়াম কাঠের দরজা">Premium Wooden Door</h4>
                 </div>
             </div>
 
             <div class="gallery-item" data-category="bed">
                 <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=85" alt="Luxury Bed">
                 <div class="gallery-overlay">
-                    <span>Bed Collection</span>
-                    <h4>Luxury Bedroom</h4>
+                    <span data-en="Bed Collection" data-bn="খাটের সংগ্রহ">Bed Collection</span>
+                    <h4 data-en="Luxury Bedroom" data-bn="বিলাসবহুল বেডরুম">Luxury Bedroom</h4>
                 </div>
             </div>
 
             <div class="gallery-item" data-category="window">
                 <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=85" alt="Window Design">
                 <div class="gallery-overlay">
-                    <span>Window Collection</span>
-                    <h4>Modern Window Design</h4>
+                    <span data-en="Window Collection" data-bn="জানালার সংগ্রহ">Window Collection</span>
+                    <h4 data-en="Modern Window Design" data-bn="আধুনিক জানালার ডিজাইন">Modern Window Design</h4>
                 </div>
             </div>
 
             <div class="gallery-item" data-category="sofa">
                 <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800&q=85" alt="Sofa">
                 <div class="gallery-overlay">
-                    <span>Sofa Collection</span>
-                    <h4>Elegant Sofa Design</h4>
+                    <span data-en="Sofa Collection" data-bn="সোফার সংগ্রহ">Sofa Collection</span>
+                    <h4 data-en="Elegant Sofa Design" data-bn="রুচিশীল সোফার ডিজাইন">Elegant Sofa Design</h4>
                 </div>
             </div>
 
             <div class="gallery-item" data-category="dining">
                 <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=800&q=85" alt="Dining Table">
                 <div class="gallery-overlay">
-                    <span>Dining Collection</span>
-                    <h4>Classic Dining Table</h4>
+                    <span data-en="Dining Collection" data-bn="ডাইনিং সংগ্রহ">Dining Collection</span>
+                    <h4 data-en="Classic Dining Table" data-bn="ক্লাসিক ডাইনিং টেবিল">Classic Dining Table</h4>
                 </div>
             </div>
 
             <div class="gallery-item" data-category="wardrobe">
                 <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=800&q=85" alt="Wardrobe">
                 <div class="gallery-overlay">
-                    <span>Wardrobe Collection</span>
-                    <h4>Modern Wardrobe</h4>
+                    <span data-en="Wardrobe Collection" data-bn="ওয়ারড্রোব সংগ্রহ">Wardrobe Collection</span>
+                    <h4 data-en="Modern Wardrobe" data-bn="আধুনিক ওয়ারড্রোব">Modern Wardrobe</h4>
                 </div>
             </div>
 
-            <!-- Extra Images -->
             <div class="gallery-item" data-category="door">
                 <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=85" alt="Door Design">
                 <div class="gallery-overlay">
-                    <span>Door Collection</span>
-                    <h4>Modern Entrance</h4>
+                    <span data-en="Door Collection" data-bn="দরজার সংগ্রহ">Door Collection</span>
+                    <h4 data-en="Modern Entrance" data-bn="আধুনিক প্রবেশদ্বার">Modern Entrance</h4>
                 </div>
             </div>
 
             <div class="gallery-item" data-category="bed">
                 <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=85" alt="Bedroom">
                 <div class="gallery-overlay">
-                    <span>Bed Collection</span>
-                    <h4>Contemporary Bedroom</h4>
+                    <span data-en="Bed Collection" data-bn="খাটের সংগ্রহ">Bed Collection</span>
+                    <h4 data-en="Contemporary Bedroom" data-bn="আধুনিক বেডরুম">Contemporary Bedroom</h4>
                 </div>
             </div>
 
             <div class="gallery-item" data-category="window">
                 <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=85" alt="Window">
                 <div class="gallery-overlay">
-                    <span>Window Collection</span>
-                    <h4>Elegant Window</h4>
+                    <span data-en="Window Collection" data-bn="জানালার সংগ্রহ">Window Collection</span>
+                    <h4 data-en="Elegant Window" data-bn="নান্দনিক জানালা">Elegant Window</h4>
                 </div>
             </div>
 
             <div class="gallery-item" data-category="sofa">
                 <img src="https://images.unsplash.com/photo-1550254478-ead40cc54513?auto=format&fit=crop&w=800&q=85" alt="Sofa Design">
                 <div class="gallery-overlay">
-                    <span>Sofa Collection</span>
-                    <h4>Premium Sofa</h4>
+                    <span data-en="Sofa Collection" data-bn="সোফার সংগ্রহ">Sofa Collection</span>
+                    <h4 data-en="Premium Sofa" data-bn="প্রিমিয়াম সোফা">Premium Sofa</h4>
                 </div>
             </div>
 
             <div class="gallery-item" data-category="dining">
                 <img src="https://images.unsplash.com/photo-1604578762246-41134e37f9cc?auto=format&fit=crop&w=800&q=85" alt="Dining">
                 <div class="gallery-overlay">
-                    <span>Dining Collection</span>
-                    <h4>Luxury Dining</h4>
+                    <span data-en="Dining Collection" data-bn="ডাইনিং সংগ্রহ">Dining Collection</span>
+                    <h4 data-en="Luxury Dining" data-bn="বিলাসবহুল ডাইনিং">Luxury Dining</h4>
                 </div>
             </div>
 
             <div class="gallery-item" data-category="wardrobe">
                 <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=800&q=85" alt="Wardrobe">
                 <div class="gallery-overlay">
-                    <span>Wardrobe Collection</span>
-                    <h4>Wooden Wardrobe</h4>
+                    <span data-en="Wardrobe Collection" data-bn="ওয়ারড্রোব সংগ্রহ">Wardrobe Collection</span>
+                    <h4 data-en="Wooden Wardrobe" data-bn="কাঠের ওয়ারড্রোব">Wooden Wardrobe</h4>
                 </div>
             </div>
 
@@ -428,13 +453,345 @@
 
         <div class="gallery-footer">
             <button class="gallery-load-more" id="galleryLoadMore">
-                VIEW MORE <i class="bi bi-arrow-right"></i>
+                <span data-en="VIEW MORE" data-bn="আরও দেখুন">VIEW MORE</span>
+                <i class="bi bi-arrow-right"></i>
             </button>
         </div>
 
     </div>
 </section>
-<!-- GALLERY SECTION END -->
+
+
+
+
+<!-- ===== Corporate Clients Section ===== -->
+
+
+<!-- =========================================
+     NEW KING STAR - OUR VALUABLE CLIENTS
+========================================== -->
+
+<section class="clients-section" id="our-clients">
+
+    <div class="container">
+
+        <!-- Section Heading -->
+        <div class="clients-heading text-center">
+
+            <span class="section-label"
+                  data-en="OUR ACHIEVEMENTS"
+                  data-bn="আমাদের অর্জন">
+                OUR ACHIEVEMENTS
+            </span>
+
+            <h2 data-en="Our Valuable Clients"
+                data-bn="আমাদের সম্মানিত ক্লায়েন্ট">
+                Our Valuable Clients
+            </h2>
+
+            <p data-en="We are proud to supply quality wooden furniture to reputed organizations and corporate clients."
+               data-bn="স্বনামধন্য প্রতিষ্ঠান ও কর্পোরেট ক্লায়েন্টদের মানসম্মত কাঠের আসবাবপত্র সরবরাহ করতে পেরে আমরা গর্বিত।">
+                We are proud to supply quality wooden furniture to reputed organizations and corporate clients.
+            </p>
+
+        </div>
+
+
+        <!-- =====================================
+             CORPORATE IMAGE BANNER CAROUSEL
+        ====================================== -->
+
+        <div class="clients-banner">
+
+            <div class="banner-slides">
+
+                <!-- Slide 1 -->
+                <div class="banner-slide slide-one">
+                    <img
+                        src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85"
+                        alt="Corporate Office Interior">
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="banner-slide slide-two">
+                    <img
+                        src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=85"
+                        alt="Modern Office Furniture">
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="banner-slide slide-three">
+                    <img
+                        src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=85"
+                        alt="Premium Corporate Workspace">
+                </div>
+
+            </div>
+
+
+            <!-- Banner Overlay -->
+            <div class="clients-banner-overlay"></div>
+
+
+            <!-- Banner Text -->
+            <div class="clients-banner-content">
+
+                <span
+                    data-en="BUILT ON TRUST & QUALITY"
+                    data-bn="বিশ্বাস ও গুণগত মানের প্রতিশ্রুতি">
+                    BUILT ON TRUST & QUALITY
+                </span>
+
+                <h3
+                    data-en="Creating Furniture For Professional Spaces"
+                    data-bn="প্রতিষ্ঠানের জন্য মানসম্মত আসবাবপত্র তৈরি">
+                    Creating Furniture For Professional Spaces
+                </h3>
+
+            </div>
+
+
+            <!-- Banner Indicators -->
+            <div class="banner-indicators">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             CLIENT COMPANY LOGO CAROUSEL
+        ====================================== -->
+
+        <div class="clients-carousel">
+
+            <div class="clients-track">
+
+
+                <!-- CLIENT 01: DREAM DALE -->
+                <div class="client-card">
+
+                    <div class="client-logo">
+                        <img
+                            src="images/clients/dream-dale.png"
+                            alt="Dream Dale Ltd. Logo">
+                    </div>
+
+                    <h4>Dream Dale Ltd.</h4>
+
+                    <p
+                        data-en="Corporate Client"
+                        data-bn="কর্পোরেট ক্লায়েন্ট">
+                        Corporate Client
+                    </p>
+
+                </div>
+
+
+
+                <!-- CLIENT 02: CONCORD -->
+                <div class="client-card">
+
+                    <div class="client-logo">
+                        <img
+                            src="https://www.google.com/s2/favicons?domain=concordrealestatebd.com&sz=128"
+                            alt="Concord Logo">
+                    </div>
+
+                    <h4>Concord Real Estate Ltd.</h4>
+
+                    <p
+                        data-en="Real Estate Company"
+                        data-bn="রিয়েল এস্টেট প্রতিষ্ঠান">
+                        Real Estate Company
+                    </p>
+
+                </div>
+
+
+
+                <!-- CLIENT 03: BTI -->
+                <div class="client-card">
+
+                    <div class="client-logo">
+                        <img
+                            src="https://www.google.com/s2/favicons?domain=btibd.com&sz=128"
+                            alt="BTI Logo">
+                    </div>
+
+                    <h4>BTI</h4>
+
+                    <p
+                        data-en="Building Technology & Ideas Ltd."
+                        data-bn="বিল্ডিং টেকনোলজি অ্যান্ড আইডিয়াস">
+                        Building Technology & Ideas Ltd.
+                    </p>
+
+                </div>
+
+
+
+                <!-- CLIENT 04: SHELTECH -->
+                <div class="client-card">
+
+                    <div class="client-logo">
+                        <img
+                            src="https://www.google.com/s2/favicons?domain=sheltech-bd.com&sz=128"
+                            alt="Sheltech Logo">
+                    </div>
+
+                    <h4>Sheltech (Pvt.) Ltd.</h4>
+
+                    <p
+                        data-en="Real Estate Company"
+                        data-bn="রিয়েল এস্টেট প্রতিষ্ঠান">
+                        Real Estate Company
+                    </p>
+
+                </div>
+
+
+
+                <!-- CLIENT 05: NAVANA -->
+                <div class="client-card">
+
+                    <div class="client-logo">
+                        <img
+                            src="https://www.google.com/s2/favicons?domain=navanarealestate.com&sz=128"
+                            alt="Navana Logo">
+                    </div>
+
+                    <h4>Navana Real Estate Ltd.</h4>
+
+                    <p
+                        data-en="Real Estate Company"
+                        data-bn="রিয়েল এস্টেট প্রতিষ্ঠান">
+                        Real Estate Company
+                    </p>
+
+                </div>
+
+
+
+                <!-- =====================================
+                     DUPLICATE ITEMS FOR INFINITE LOOP
+                ====================================== -->
+
+
+                <!-- DUPLICATE 01 -->
+                <div class="client-card">
+
+                    <div class="client-logo">
+                        <img
+                            src="images/clients/dream-dale.png"
+                            alt="Dream Dale Ltd. Logo">
+                    </div>
+
+                    <h4>Dream Dale Ltd.</h4>
+
+                    <p>Corporate Client</p>
+
+                </div>
+
+
+                <!-- DUPLICATE 02 -->
+                <div class="client-card">
+
+                    <div class="client-logo">
+                        <img
+                            src="https://www.google.com/s2/favicons?domain=concordrealestatebd.com&sz=128"
+                            alt="Concord Logo">
+                    </div>
+
+                    <h4>Concord Real Estate Ltd.</h4>
+
+                    <p>Real Estate Company</p>
+
+                </div>
+
+
+                <!-- DUPLICATE 03 -->
+                <div class="client-card">
+
+                    <div class="client-logo">
+                        <img
+                            src="https://www.google.com/s2/favicons?domain=btibd.com&sz=128"
+                            alt="BTI Logo">
+                    </div>
+
+                    <h4>BTI</h4>
+
+                    <p>Building Technology & Ideas Ltd.</p>
+
+                </div>
+
+
+                <!-- DUPLICATE 04 -->
+                <div class="client-card">
+
+                    <div class="client-logo">
+                        <img
+                            src="https://www.google.com/s2/favicons?domain=sheltech-bd.com&sz=128"
+                            alt="Sheltech Logo">
+                    </div>
+
+                    <h4>Sheltech (Pvt.) Ltd.</h4>
+
+                    <p>Real Estate Company</p>
+
+                </div>
+
+
+                <!-- DUPLICATE 05 -->
+                <div class="client-card">
+
+                    <div class="client-logo">
+                        <img
+                            src="https://www.google.com/s2/favicons?domain=navanarealestate.com&sz=128"
+                            alt="Navana Logo">
+                    </div>
+
+                    <h4>Navana Real Estate Ltd.</h4>
+
+                    <p>Real Estate Company</p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             BOTTOM CONTENT
+        ====================================== -->
+
+        <div class="clients-bottom text-center">
+
+            <h3
+                data-en="Your Trusted Furniture Partner"
+                data-bn="আপনার বিশ্বস্ত আসবাবপত্র সহযোগী">
+                Your Trusted Furniture Partner
+            </h3>
+
+            <p
+                data-en="Quality craftsmanship. Reliable service. Lasting relationships."
+                data-bn="মানসম্মত কারুকাজ। নির্ভরযোগ্য সেবা। দীর্ঘস্থায়ী সম্পর্ক।">
+                Quality craftsmanship. Reliable service. Lasting relationships.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 
 
 
@@ -448,15 +805,24 @@
 
                 <span class="contact-tag">
                     <span class="contact-dot"></span>
-                    LET'S CONNECT
+                    <span data-en="LET'S CONNECT" data-bn="যোগাযোগ করুন">LET'S CONNECT</span>
                 </span>
 
                 <h2>
-                    Let's Create<br>
-                    Something <span>Beautiful.</span>
+                    <span class="contact-heading-line"
+                        data-en="Let's Create"
+                        data-bn="চলুন তৈরি করি">Let's Create</span><br>
+                    <span class="contact-heading-line"
+                        data-en="Something"
+                        data-bn="কিছু সুন্দর">Something</span>
+                    <span class="highlight"
+                        data-en="Beautiful."
+                        data-bn="নান্দনিক।">Beautiful.</span>
                 </h2>
 
-                <p class="contact-description">
+                <p class="contact-description"
+                    data-en="Have a furniture project in mind? Tell us what you're looking for. Our team is ready to help you bring your dream space to life."
+                    data-bn="আপনার কি কোনো আসবাবপত্র তৈরির পরিকল্পনা আছে? আপনার প্রয়োজনের কথা আমাদের জানান। আপনার স্বপ্নের ঘর সাজাতে আমাদের টিম আপনাকে সহযোগিতা করতে প্রস্তুত।">
                     Have a furniture project in mind? Tell us what you're looking for.
                     Our team is ready to help you bring your dream space to life.
                 </p>
@@ -468,7 +834,7 @@
                             <i class="bi bi-envelope"></i>
                         </div>
                         <div>
-                            <small>EMAIL US</small>
+                            <small data-en="EMAIL US" data-bn="ইমেইল করুন">EMAIL US</small>
                             <p>dmraihan0007@gmail.com</p>
                         </div>
                     </div>
@@ -478,7 +844,7 @@
                             <i class="bi bi-telephone"></i>
                         </div>
                         <div>
-                            <small>CALL US</small>
+                            <small data-en="CALL US" data-bn="ফোন করুন">CALL US</small>
                             <p>+880 1300-573753</p>
                         </div>
                     </div>
@@ -488,8 +854,8 @@
                             <i class="bi bi-geo-alt"></i>
                         </div>
                         <div>
-                            <small>OUR LOCATION</small>
-                            <p>Dhaka, Bangladesh</p>
+                            <small data-en="OUR LOCATION" data-bn="আমাদের ঠিকানা">OUR LOCATION</small>
+                            <p data-en="Dhaka, Bangladesh" data-bn="ঢাকা, বাংলাদেশ">Dhaka, Bangladesh</p>
                         </div>
                     </div>
 
@@ -497,19 +863,29 @@
 
                 <div class="contact-bottom-text">
                     <span></span>
-                    Premium Furniture. Timeless Living.
+                    <span data-en="Premium Furniture. Timeless Living."
+                        data-bn="উন্নতমানের আসবাবপত্র। চিরন্তন সৌন্দর্য।">
+                        Premium Furniture. Timeless Living.
+                    </span>
                 </div>
 
             </div>
-
 
             <!-- RIGHT FORM -->
             <div class="contact-form-box">
 
                 <div class="form-top">
                     <div>
-                        <span class="form-subtitle">GET IN TOUCH</span>
-                        <h3>Send Us a Message</h3>
+                        <span class="form-subtitle"
+                            data-en="GET IN TOUCH"
+                            data-bn="আমাদের সাথে যোগাযোগ করুন">
+                            GET IN TOUCH
+                        </span>
+
+                        <h3 data-en="Send Us a Message"
+                            data-bn="আমাদের মেসেজ পাঠান">
+                            Send Us a Message
+                        </h3>
                     </div>
 
                     <div class="form-top-icon">
@@ -517,7 +893,9 @@
                     </div>
                 </div>
 
-                <p class="form-intro">
+                <p class="form-intro"
+                    data-en="Fill out the form below and we'll get back to you shortly."
+                    data-bn="নিচের ফর্মটি পূরণ করুন। আমরা যত দ্রুত সম্ভব আপনার সাথে যোগাযোগ করব।">
                     Fill out the form below and we'll get back to you shortly.
                 </p>
 
@@ -526,27 +904,35 @@
                     <div class="form-row">
 
                         <div class="form-group">
-                            <label for="visitorName">Your Name</label>
+                            <label for="visitorName"
+                                data-en="Your Name" data-bn="আপনার নাম">
+                                Your Name
+                            </label>
+
                             <div class="input-wrap">
                                 <i class="bi bi-person"></i>
-                                <input
-                                    type="text"
-                                    id="visitorName"
+                                <input type="text" id="visitorName"
                                     name="from_name"
                                     placeholder="Enter your full name"
+                                    data-en-placeholder="Enter your full name"
+                                    data-bn-placeholder="আপনার পুরো নাম লিখুন"
                                     required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="visitorEmail">Email Address</label>
+                            <label for="visitorEmail"
+                                data-en="Email Address" data-bn="ইমেইল ঠিকানা">
+                                Email Address
+                            </label>
+
                             <div class="input-wrap">
                                 <i class="bi bi-envelope"></i>
-                                <input
-                                    type="email"
-                                    id="visitorEmail"
+                                <input type="email" id="visitorEmail"
                                     name="reply_to"
                                     placeholder="Enter your email"
+                                    data-en-placeholder="Enter your email"
+                                    data-bn-placeholder="আপনার ইমেইল লিখুন"
                                     required>
                             </div>
                         </div>
@@ -554,33 +940,44 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="visitorPhone">Phone Number</label>
+                        <label for="visitorPhone"
+                            data-en="Phone Number" data-bn="ফোন নম্বর">
+                            Phone Number
+                        </label>
+
                         <div class="input-wrap">
                             <i class="bi bi-telephone"></i>
-                            <input
-                                type="tel"
-                                id="visitorPhone"
+                            <input type="tel" id="visitorPhone"
                                 name="phone"
                                 placeholder="Enter your phone number"
+                                data-en-placeholder="Enter your phone number"
+                                data-bn-placeholder="আপনার ফোন নম্বর লিখুন"
                                 required>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="visitorRequirement">Your Requirements</label>
+                        <label for="visitorRequirement"
+                            data-en="Your Requirements"
+                            data-bn="আপনার প্রয়োজন">
+                            Your Requirements
+                        </label>
+
                         <div class="textarea-wrap">
                             <i class="bi bi-chat-left-text"></i>
-                            <textarea
-                                id="visitorRequirement"
+                            <textarea id="visitorRequirement"
                                 name="message"
                                 rows="5"
                                 placeholder="Tell us about the furniture you need..."
+                                data-en-placeholder="Tell us about the furniture you need..."
+                                data-bn-placeholder="আপনার কী ধরনের আসবাবপত্র প্রয়োজন তা লিখুন..."
                                 required></textarea>
                         </div>
                     </div>
 
                     <button type="submit" id="submitBtn" class="contact-submit-btn">
-                        <span>Submit Inquiry</span>
+                        <span data-en="Submit Inquiry"
+                            data-bn="অনুরোধ পাঠান">Submit Inquiry</span>
                         <i class="bi bi-arrow-up-right"></i>
                     </button>
 
@@ -588,7 +985,10 @@
 
                     <div class="form-security">
                         <i class="bi bi-shield-check"></i>
-                        Your information is safe with us.
+                        <span data-en="Your information is safe with us."
+                            data-bn="আপনার তথ্য আমাদের কাছে নিরাপদ।">
+                            Your information is safe with us.
+                        </span>
                     </div>
 
                 </form>
@@ -599,7 +999,6 @@
 
     </div>
 </section>
-
 
 <!-- FOOTER -->
 
