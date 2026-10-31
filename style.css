@@ -83,7 +83,23 @@ img {
     max-width: 180px;
     object-fit: contain;
 }
+/* Light Mode */
+.logo-light {
+    display: block;
+}
 
+.logo-dark {
+    display: none;
+}
+
+/* Dark Mode */
+body.dark .logo-light {
+    display: none !important;
+}
+
+body.dark .logo-dark {
+    display: block !important;
+}
 .navbar-nav {
     align-items: center;
     gap: 23px;
